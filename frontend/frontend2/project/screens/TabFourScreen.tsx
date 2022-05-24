@@ -6,9 +6,9 @@ import { Text, View } from '../components/Themed';
 export default function TabFourScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Four</Text>
+      <Text style={styles.title}> Today, May 23</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabFourScreen.tsx" />
+      
     </View>
   );
 }
@@ -16,11 +16,11 @@ export default function TabFourScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   separator: {
@@ -29,3 +29,4 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 });
+
