@@ -1,16 +1,20 @@
-import { DatePickerIOSBase, StyleSheet } from 'react-native';
+import { DatePickerIOSBase, StyleSheet, Image } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
+
 export default function TabTwoScreen() {
  
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> Today, May 23 </Text> 
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+   
+      <View style={styles.container}>
+        <Text style={styles.title}> Today, May 23 </Text> 
+        <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+       
       
     </View>
+
   );
 }
 
