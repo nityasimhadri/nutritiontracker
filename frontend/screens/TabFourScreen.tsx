@@ -17,19 +17,18 @@ export default function TabFourScreen() {
 }
 
 const styles = StyleSheet.create({
-  containerView: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-
-  },
-  // container: {
-  //   flex: 1,
-  //   alignItems: 'center',
+  // containerView: {
   //   justifyContent: 'center',
-  //   flexDirection: 'row',
-    
+  //   alignItems: 'center',
+  //   flexDirection:'row',
   // },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    
+  },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
