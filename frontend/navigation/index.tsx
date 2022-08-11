@@ -72,9 +72,9 @@
          options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
            title: 'User',
            tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
-           tabBarActiveTintColor: "#91A9BF",
+           tabBarActiveTintColor: "#A8886C",
            tabBarInactiveTintColor: 'gray',
-           tabBarActiveBackgroundColor: "black",
+           tabBarActiveBackgroundColor: "white",
            tabBarInactiveBackgroundColor: "white",
            headerRight: () => (
              <Pressable
@@ -98,9 +98,9 @@
          options={{
            title: 'Food',
            tabBarIcon: ({ color }) => <TabBarIcon name="apple" color={color} />,
-           tabBarActiveTintColor: "#91A9BF",
+           tabBarActiveTintColor: "#A8886C",
            tabBarInactiveTintColor: 'gray',
-           tabBarActiveBackgroundColor: "black",
+           tabBarActiveBackgroundColor: "white",
            tabBarInactiveBackgroundColor: "white",
          }}
        />
@@ -118,7 +118,7 @@
            <FontAwesome
              name="plus"
              size={35}
-             color='#91A9BF'
+             color='black'
              style={{ marginRight: 15 }}
            />
          </Pressable>
@@ -132,9 +132,9 @@
           headerShown: false,
            title: 'Activity',
            tabBarIcon: ({ color }) => <MaterialCommunityIcons name="dumbbell" size={24} color={color} />,
-           tabBarActiveTintColor: "#91A9BF",
+           tabBarActiveTintColor: "#A8886C",
            tabBarInactiveTintColor: 'gray',
-           tabBarActiveBackgroundColor: "black",
+           tabBarActiveBackgroundColor: "white",
            tabBarInactiveBackgroundColor: "white",
          }}
        />
@@ -144,9 +144,9 @@
          options={{
            title: 'Charts',
            tabBarIcon: ({ color }) => <AntDesign name="areachart" size={24} color={color} />,
-           tabBarActiveTintColor: "#91A9BF",
+           tabBarActiveTintColor: "#A8886C",
            tabBarInactiveTintColor: 'gray',
-           tabBarActiveBackgroundColor: "black",
+           tabBarActiveBackgroundColor: "white",
            tabBarInactiveBackgroundColor: "white",
          }}
        />
