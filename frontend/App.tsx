@@ -15,10 +15,10 @@ export default function App() {
   } else {
     return (
       <NativeBaseProvider>
-      <SafeAreaProvider>
+        <SafeAreaProvider>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
-      </SafeAreaProvider>
+        </SafeAreaProvider>
       </NativeBaseProvider>
     );
   }

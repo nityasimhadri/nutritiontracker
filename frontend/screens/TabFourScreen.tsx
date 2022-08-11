@@ -1,22 +1,26 @@
 import { StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-
-import { Text, Box, Pressable, HStack, VStack } from 'native-base';
+import React from 'react';
+import Modal from 'react-native-modal';
+import { Button, ScrollView, Text, Box, Pressable, HStack, VStack } from 'native-base';
 import { View } from '../components/Themed';
-
+import { StatusBar } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function TabFourScreen() {
+  const [modalVisible, setModalVisible] = React.useState(false);
+
   return (
     <View style={styles.container}>
-    <VStack space={4} alignItems="center" width="90%" >
     <VStack space={4} alignItems="center">
     <Box alignItems="center">
-      <Pressable>
+      <Pressable onPress={() => setModalVisible(true)}>
         {({
         isHovered,
         isPressed
       }) => {
-        return <Box width='90%' borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
+        return <Box 
+        width='90%' borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
           transform: [{
             scale: isPressed ? 0.96 : 1
           }]
@@ -35,14 +39,13 @@ export default function TabFourScreen() {
       }}
       </Pressable>
     </Box>
-    <HStack width="90%" space={4} alignItems="center">
       <Box alignItems="center">
       <Pressable>
         {({
         isHovered,
         isPressed
       }) => {
-        return <Box borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
+        return <Box width="100%" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
           transform: [{
             scale: isPressed ? 0.96 : 1
           }]
@@ -67,7 +70,7 @@ export default function TabFourScreen() {
         isHovered,
         isPressed
       }) => {
-        return <Box borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
+        return <Box width="85%" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
           transform: [{
             scale: isPressed ? 0.96 : 1
           }]
@@ -86,10 +89,18 @@ export default function TabFourScreen() {
       }}
       </Pressable>
     </Box>
-      </HStack>
     </VStack>
-    </VStack>
+    <Modal isVisible={modalVisible} animationIn='slideInUp' animationOut='slideOutDown' >
+        <View style={styles.fill}>
+          <Button onPress={() => setModalVisible(false)}>
+            Close!
+          </Button>
+          <Text>Hello!</Text>
+        </View>
+      </Modal>
+
     </View>
+
   );
 }
 
@@ -111,10 +122,15 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  fill: {
+    flex: 0,
+    height: '100%',
+    position: 'absolute',
+    left: 0,
+    width: '100%',
+    overflow: 'hidden',
+},
+
+
 });
 
