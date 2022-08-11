@@ -4,6 +4,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import {Surface, Shape} from '@react-native-community/art';
+import { NativeBaseProvider, Text, Box } from 'native-base';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
