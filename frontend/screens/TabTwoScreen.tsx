@@ -2,7 +2,7 @@ import { DatePickerIOSBase, StyleSheet, Image } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { NativeBaseProvider, Text, Box } from 'native-base';
+
 
 
 export default function TabTwoScreen() {
