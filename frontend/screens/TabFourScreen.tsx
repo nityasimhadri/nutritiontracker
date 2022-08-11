@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 import { Text, Box, Pressable, HStack, VStack } from 'native-base';
 import { View } from '../components/Themed';
@@ -25,7 +25,7 @@ export default function TabFourScreen() {
               <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
                 Quick Start
               </Text>
-              <FontAwesome name="play" size={24} color="black" />
+              <FontAwesome5 name="play" size={24} color="black" />
               </HStack>
               <Text mt="2" fontSize="sm" color="coolGray.700">
                 Start an empty workout
@@ -51,7 +51,7 @@ export default function TabFourScreen() {
               <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
                 New Routine
               </Text>
-              <FontAwesome name="plus" size={24} color="black" />
+              <FontAwesome5 name="plus" size={24} color="black" />
               </HStack>
               <Text mt="2" fontSize="sm" color="coolGray.700" >
                 Add a new fitness plan
@@ -76,7 +76,7 @@ export default function TabFourScreen() {
               <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
                 Search Routines
               </Text>
-              <FontAwesome name="search" size={24} color="black" />
+              <FontAwesome5 name="search" size={24} color="black" />
               </HStack>
               <Text mt="2" fontSize="sm" color="coolGray.700">
                 Search saved routines

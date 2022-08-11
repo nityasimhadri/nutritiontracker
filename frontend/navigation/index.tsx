@@ -3,9 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
- import { FontAwesome } from '@expo/vector-icons';
- import { AntDesign } from '@expo/vector-icons'; 
- import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+ import { FontAwesome5 } from '@expo/vector-icons';
  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -82,7 +80,7 @@
                style={({ pressed }) => ({
                  opacity: pressed ? 0.5 : 1,
                })}>
-               <FontAwesome
+               <FontAwesome5
                  name="info-circle"
                  size={25}
                  color={Colors[colorScheme].text}
@@ -115,7 +113,7 @@
              style={({ pressed }) => ({
                opacity: pressed ? 0.5 : 1,
            })}>
-           <FontAwesome
+           <FontAwesome5
              name="plus"
              size={35}
              color='black'
@@ -131,7 +129,7 @@
          options={{
           headerShown: false,
            title: 'Activity',
-           tabBarIcon: ({ color }) => <MaterialCommunityIcons name="dumbbell" size={24} color={color} />,
+           tabBarIcon: ({ color }) => <FontAwesome5 name="dumbbell" size={24} color={color} />,
            tabBarActiveTintColor: "#A8886C",
            tabBarInactiveTintColor: 'gray',
            tabBarActiveBackgroundColor: "white",
@@ -143,7 +141,7 @@
          component={TabFiveScreen}
          options={{
            title: 'Charts',
-           tabBarIcon: ({ color }) => <AntDesign name="areachart" size={24} color={color} />,
+           tabBarIcon: ({ color }) => <FontAwesome5 name="chart-area" size={24} color={color} />,
            tabBarActiveTintColor: "#A8886C",
            tabBarInactiveTintColor: 'gray',
            tabBarActiveBackgroundColor: "white",
@@ -158,10 +156,10 @@
   * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
   */
  function TabBarIcon(props: {
-   name: React.ComponentProps<typeof FontAwesome>['name'];
+   name: React.ComponentProps<typeof FontAwesome5>['name'];
    color: string;
  }) {
-   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+   return <FontAwesome5 size={30} style={{ marginBottom: -3 }} {...props} />;
  }
  
  
