@@ -129,6 +129,7 @@
          name="TabFour"
          component={TabFourScreen}
          options={{
+          headerShown: false,
            title: 'Activity',
            tabBarIcon: ({ color }) => <MaterialCommunityIcons name="dumbbell" size={24} color={color} />,
            tabBarActiveTintColor: "#91A9BF",
