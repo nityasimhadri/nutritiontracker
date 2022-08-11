@@ -1,23 +1,26 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
+import { Center, Container, VStack } from 'native-base';
 import { Text, View } from '../components/Themed';
 
 export default function TabFourScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> Today, May 23</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      
-    </View>
+    <Container style={styles.container}>
+    <VStack space={4} alignItems="center">
+      <Center w="64" h="20" bg="indigo.300" rounded="md" shadow={3} />
+      <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} />
+      <Center w="64" h="20" bg="indigo.700" rounded="md" shadow={3} />
+    </VStack>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
   },
   title: {
     fontSize: 30,
