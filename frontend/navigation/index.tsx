@@ -13,7 +13,7 @@
  import Colors from '../constants/Colors';
  import useColorScheme from '../hooks/useColorScheme';
  import {NotFoundScreen, TabFiveScreen, TabFourScreen, TabTwoScreen, TabOneScreen, ModalScreen} from '../screens';
-import { AddRoutine, SearchRoutine, StartRoutine } from '../screens/Fitness';
+import { AddExcercise, AddRoutine, SearchRoutine, StartRoutine } from '../screens/Fitness';
  import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
  import LinkingConfiguration from './LinkingConfiguration';
  
@@ -43,6 +43,7 @@ import { AddRoutine, SearchRoutine, StartRoutine } from '../screens/Fitness';
          <Stack.Screen name="AddRoutine" component={AddRoutine} />
          <Stack.Screen name="SearchRoutine" component={SearchRoutine} />
          <Stack.Screen name="StartRoutine" component={StartRoutine} />
+         <Stack.Screen name="AddExcercise" component={AddExcercise} />
        </Stack.Group>
      </Stack.Navigator>
    );

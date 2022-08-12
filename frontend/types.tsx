@@ -20,6 +20,7 @@ export type RootStackParamList = {
   AddRoutine: undefined;
   StartRoutine: undefined;
   SearchRoutine: undefined;
+  AddExcercise: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -36,6 +37,7 @@ export type RootTabParamList = {
   AddRoutine: undefined;
   SearchRoutine: undefined;
   StartRoutine: undefined;
+  AddExcercise: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<

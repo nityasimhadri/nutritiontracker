@@ -6,14 +6,14 @@ import { Text, View} from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import { Stack, Button, TextArea, Box, Divider, VStack } from 'native-base';
 
-export default function AddRoutine({ navigation }: RootTabScreenProps<'AddRoutine'>) {
+export default function AddExcercise({ navigation }: RootTabScreenProps<'AddExcercise'>) {
   return (
     <View style={styles.container}>
       <VStack alignItems={'center'} space='4'>
       <Box alignItems="center" w="100%">
       <TextArea fontSize="2xl" h={12} autoCompleteType='off' placeholder="Routine Name" w="100%"/>
     </Box>
-    <Button width="80%" onPress={() => navigation.navigate('AddExcercise')}>
+    <Button width="80%" onPress={() => console.log("hello world")}>
     <Stack direction="row" mb="2.5" mt="1.5" space={3} justifyContent='center'>
       <Text darkColor='white' lightColor='white'>
     Add Excercise    

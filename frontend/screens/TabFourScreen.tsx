@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-import { Button, ScrollView, Text, Box, Pressable, HStack, VStack } from 'native-base';
+import { Button, ScrollView, Text, Box, Pressable, HStack, Stack } from 'native-base';
 import { View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -9,7 +10,7 @@ export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFou
 
   return (
     <View style={styles.container}>
-    <VStack space={4} alignItems="center">
+    <Stack mb="2.5" mt="1.5" direction="column" space={3}>
     <Box alignItems="center">
       <Pressable onPress={() => navigation.navigate('StartRoutine')}>
         {({
@@ -17,7 +18,7 @@ export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFou
         isPressed
       }) => {
         return <Box 
-        width='90%' borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
+         borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
           transform: [{
             scale: isPressed ? 0.96 : 1
           }]
@@ -37,12 +38,12 @@ export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFou
       </Pressable>
     </Box>
       <Box alignItems="center">
-      <Pressable onPress={() => navigation.navigate('StartRoutine')}>
+      <Pressable onPress={() => navigation.navigate('AddRoutine')}>
         {({
         isHovered,
         isPressed
       }) => {
-        return <Box width="100%" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
+        return <Box  borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
           transform: [{
             scale: isPressed ? 0.96 : 1
           }]
@@ -67,14 +68,14 @@ export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFou
         isHovered,
         isPressed
       }) => {
-        return <Box width="85%" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
+        return <Box borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" rounded="8" style={{
           transform: [{
             scale: isPressed ? 0.96 : 1
           }]
         }}>
             <HStack space={4}>
               <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                Search Routines
+                Find Routine
               </Text>
               <FontAwesome5 name="search" size={24} color="black" />
               </HStack>
@@ -86,29 +87,37 @@ export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFou
       }}
       </Pressable>
     </Box>
-    </VStack>
+    </Stack>
     </View>
 
   );
 }
 
 const styles = StyleSheet.create({
-  // containerView: {
-  //   justifyContent: 'center',
+
+  // container: {
+  //   flex: 1,
   //   alignItems: 'center',
-  //   flexDirection:'row',
+  //   justifyContent: 'center',
+  //   flexDirection: 'row',
+  
+    
   // },
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-  
-    
+    position: 'relative',
+    paddingTop: 150,
+
   },
   title: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 'bold',
+  },
+  separator: {
+    marginVertical: 30,
+    height: 1,
+    width: '80%',
   },
   fill: {
     flex: 0,

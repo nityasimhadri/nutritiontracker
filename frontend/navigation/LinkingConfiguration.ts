@@ -44,6 +44,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       },
       Modal: 'modal',
       AddRoutine: 'add',
+      AddExcercise: 'exc',
       StartRoutine: 'start',
       SearchRoutine: 'search',
       NotFound: '*',
