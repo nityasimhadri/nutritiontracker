@@ -1,20 +1,17 @@
 import { StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-import Modal from 'react-native-modal';
 import { Button, ScrollView, Text, Box, Pressable, HStack, VStack } from 'native-base';
 import { View } from '../components/Themed';
-import { StatusBar } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { RootTabScreenProps } from '../types';
 
-export default function TabFourScreen() {
-  const [modalVisible, setModalVisible] = React.useState(false);
+export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFour'>) {
 
   return (
     <View style={styles.container}>
     <VStack space={4} alignItems="center">
     <Box alignItems="center">
-      <Pressable onPress={() => setModalVisible(true)}>
+      <Pressable onPress={() => navigation.navigate('StartRoutine')}>
         {({
         isHovered,
         isPressed
@@ -40,7 +37,7 @@ export default function TabFourScreen() {
       </Pressable>
     </Box>
       <Box alignItems="center">
-      <Pressable>
+      <Pressable onPress={() => navigation.navigate('StartRoutine')}>
         {({
         isHovered,
         isPressed
@@ -62,10 +59,10 @@ export default function TabFourScreen() {
 
             </Box>;
       }}
-      </Pressable>
+      </Pressable >
     </Box>
     <Box alignItems="center">
-      <Pressable>
+      <Pressable onPress={() => navigation.navigate('SearchRoutine')}>
         {({
         isHovered,
         isPressed
@@ -90,15 +87,6 @@ export default function TabFourScreen() {
       </Pressable>
     </Box>
     </VStack>
-    <Modal isVisible={modalVisible} animationIn='slideInUp' animationOut='slideOutDown' >
-        <View style={styles.fill}>
-          <Button onPress={() => setModalVisible(false)}>
-            Close!
-          </Button>
-          <Text>Hello!</Text>
-        </View>
-      </Modal>
-
     </View>
 
   );

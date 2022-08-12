@@ -12,12 +12,8 @@
  
  import Colors from '../constants/Colors';
  import useColorScheme from '../hooks/useColorScheme';
- import ModalScreen from '../screens/ModalScreen';
- import NotFoundScreen from '../screens/NotFoundScreen';
- import TabOneScreen from '../screens/TabOneScreen';
- import TabTwoScreen from '../screens/TabTwoScreen';
- import TabFourScreen from '../screens/TabFourScreen';
- import TabFiveScreen from '../screens/TabFiveScreen';
+ import {NotFoundScreen, TabFiveScreen, TabFourScreen, TabTwoScreen, TabOneScreen, ModalScreen} from '../screens';
+import { AddRoutine, SearchRoutine, StartRoutine } from '../screens/Fitness';
  import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
  import LinkingConfiguration from './LinkingConfiguration';
  
@@ -37,13 +33,16 @@
   */
  const Stack = createNativeStackNavigator<RootStackParamList>();
  
- function RootNavigator() {
+ export function RootNavigator() {
    return (
      <Stack.Navigator>
        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
        <Stack.Group screenOptions={{ presentation: 'modal' }}>
          <Stack.Screen name="Modal" component={ModalScreen} />
+         <Stack.Screen name="AddRoutine" component={AddRoutine} />
+         <Stack.Screen name="SearchRoutine" component={SearchRoutine} />
+         <Stack.Screen name="StartRoutine" component={StartRoutine} />
        </Stack.Group>
      </Stack.Navigator>
    );

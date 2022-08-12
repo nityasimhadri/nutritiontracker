@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, Image } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View} from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import EditScreenInfo from '../../components/EditScreenInfo';
+import { Text, View} from '../../components/Themed';
+import { RootTabScreenProps } from '../../types';
 
-export default function ModalScreen({ navigation }: RootTabScreenProps<'TabThree'>) {
+export default function StartRoutine({ navigation }: RootTabScreenProps<'StartRoutine'>) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
