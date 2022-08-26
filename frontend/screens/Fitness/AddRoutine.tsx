@@ -13,13 +13,8 @@ export default function AddRoutine({ navigation }: RootTabScreenProps<'AddRoutin
       <Box alignItems="center" w="100%">
       <TextArea fontSize="2xl" h={12} autoCompleteType='off' placeholder="Routine Name" w="100%"/>
     </Box>
-    <Button width="80%" onPress={() => navigation.navigate('AddExcercise')}>
-    <Stack direction="row" mb="2.5" mt="1.5" space={3} justifyContent='center'>
-      <Text darkColor='white' lightColor='white'>
-    Add Excercise    
-    </Text>
-     <FontAwesome5 textAlignVertical='center' name="plus" size={12} color="white" />
-     </Stack>
+    <Button variant="outline" endIcon={<FontAwesome5 textAlignVertical='center' name="plus" size={12} />} onPress={() => navigation.navigate('AddExcercise')}>
+    Add Excercise
     </Button>
     </VStack>
 

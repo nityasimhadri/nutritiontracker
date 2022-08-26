@@ -1,36 +1,133 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet, Image } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View} from '../../components/Themed';
-import { RootTabScreenProps } from '../../types';
-import { Stack, Button, TextArea, Box, Divider, VStack } from 'native-base';
+import { StatusBar } from "expo-status-bar";
+import { Platform, StyleSheet } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { Text, View } from "../../components/Themed";
+import { RootTabScreenProps } from "../../types";
+import axios from "axios";
+import {
+  Center,
+  Heading,
+  Stack,
+  Button,
+  TextArea,
+  Pressable,
+  Box,
+  Divider,
+  VStack,
+  Input,
+  Icon,
+  ScrollView,
+  HStack,
+  Image,
+} from "native-base";
+import React, { useState, useEffect } from "react";
+import { isTerminatorless } from "@babel/types";
 
-export default function AddExcercise({ navigation }: RootTabScreenProps<'AddExcercise'>) {
+export default function AddExcercise({
+  navigation,
+}: RootTabScreenProps<"AddExcercise">) {
+  const options = {
+    method: "GET",
+    url: "https://exercisedb.p.rapidapi.com/exercises",
+    headers: {
+      "X-RapidAPI-Key": "8358bc6afcmshadefcae87bc73dap1134cdjsn44f6765b128f",
+      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+    },
+  };
+  const [excercises, setExcercises] = useState([]);
+  useEffect(() => {
+    fetchExcercises();
+  }, []);
+  useEffect(() => {
+    //console.log(excercises)
+  }, [excercises]);
+  let isMounted = true;
+  const fetchExcercises = async () => {
+    axios
+      .request(options)
+      .then(function (response) {
+        //console.log(response.data);
+        if (isMounted) {
+          setExcercises(response.data);
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+  //console.log(excercises);
+  const names: JSX.Element[] = [];
+  excercises.forEach(pusher);
+  function pusher(item: any) {
+    names.push(
+      <Pressable onPress={() => navigation.navigate("AddRoutine")}>
+        {({ isHovered, isPressed }) => {
+          return (
+            <Box
+              borderWidth="1"
+              borderColor="coolGray.300"
+              shadow="3"
+              bg={
+                isPressed
+                  ? "coolGray.200"
+                  : isHovered
+                  ? "coolGray.200"
+                  : "coolGray.100"
+              }
+              p="5"
+              style={{
+                transform: [
+                  {
+                    scale: isPressed ? 0.96 : 1,
+                  },
+                ],
+              }}
+            >
+
+              {item.name}
+              <Image source={{
+      uri: item.gifUrl
+    }} alt="Alternate Text" size="sm"/>
+            </Box>
+          );
+        }}
+      </Pressable>
+    );
+  }
   return (
     <View style={styles.container}>
-      <VStack alignItems={'center'} space='4'>
-      <Box alignItems="center" w="100%">
-      <TextArea fontSize="2xl" h={12} autoCompleteType='off' placeholder="Routine Name" w="100%"/>
-    </Box>
-    <Button width="80%" onPress={() => console.log("hello world")}>
-    <Stack direction="row" mb="2.5" mt="1.5" space={3} justifyContent='center'>
-      <Text darkColor='white' lightColor='white'>
-    Add Excercise    
-    </Text>
-     <FontAwesome5 textAlignVertical='center' name="plus" size={12} color="white" />
-     </Stack>
-    </Button>
-    </VStack>
-
-
-
-     
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,c255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
+      <VStack alignItems={"center"} space="4">
+        <Input
+          placeholder="Search Excercises"
+          bg="#fff"
+          width="100%"
+          borderRadius={4}
+          py={3}
+          px={1}
+          fontSize={14}
+          _web={{
+            _focus: {
+              borderColor: "muted.300",
+            },
+          }}
+          InputLeftElement={
+            <Icon
+              size="sm"
+              m={2}
+              color="gray.400"
+              as={<FontAwesome5 name="search" />}
+            />
+          }
+        />
+      </VStack>
+      <Center h="100%" w="100%">
+        <ScrollView>
+          <Stack>{names}</Stack>
+        </ScrollView>
+      </Center>
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+      <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
     </View>
   );
 }
@@ -38,16 +135,15 @@ export default function AddExcercise({ navigation }: RootTabScreenProps<'AddExce
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-
+    alignItems: "center",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
   },
 });
